@@ -47,7 +47,7 @@ characteristics.
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/prostate-SR_domain-correction.git
+git clone https://github.com/JulianRodd/prostate_MRI_CycleGAN_DT_SR.git
 cd prostate-SR_domain-correction
 
 # Install dependencies
