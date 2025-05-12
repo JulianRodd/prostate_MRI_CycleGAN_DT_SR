@@ -1,0 +1,3 @@
+common:
+  checkpoints_dir: checkpoints
+  workers: 4

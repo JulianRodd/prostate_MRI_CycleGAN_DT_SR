@@ -1,0 +1,3 @@
+model_name,run_name,epoch
+baseline_mini,0Q7,latest
+baseline_mini,AU4,1

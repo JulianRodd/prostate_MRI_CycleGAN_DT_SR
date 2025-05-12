@@ -1,0 +1,84 @@
+group_name: experiments
+patch:
+  x: 200
+  y: 200
+  z: 20
+
+network:
+  ngf: 26
+  n_layers_D: 4
+  ndf: 74
+
+optimization:
+  min_pixel: 0.5
+  batch_size: 8
+  learning_rate: 0.0002
+  constant_for_a: 0.5
+  learning_rate_D_constant: 0.5
+  beta1: 0.5
+  mixed_precision: True
+  num_workers: 4
+  lr_restart_epochs: 8
+  lr_restart_mult: 2
+  lr_min_G: 0.000002
+  lr_min_D: 0.000001
+  use_wasserstein: False
+  use_lsgan: True
+  use_hinge: False
+  use_relativistic: False
+
+training:
+  visualize_features: False
+  vis_freq: 10
+  vis_max_channels: 16
+  save_latest_freq: 1000
+  print_freq: 1
+  patches_per_image: 16
+  save_epoch_freq: 5
+  niter: 25
+  niter_decay: 25
+  accumulation_steps: 8
+  run_validation_interval: 5
+
+losses:
+  lambda_mmd: 0
+  lambda_identity: 2.0
+  lambda_cycle_a: 10.0
+  lambda_cycle_b: 10.0
+  lambda_ganloss_a: 1.0
+  lambda_ganloss_b: 1.0
+  lambda_domain_adaptation: 0.0
+  lambda_vgg: 0
+  lambda_feature_matching: 1.0
+
+
+  lambda_da_histogram: 2.0
+  lambda_da_contrast: 2.0
+  lambda_da_structure: 0.4
+  lambda_da_gradient: 0.5
+  lambda_da_ncc: 0.3
+  lambda_da_texture: 2.0
+  use_lambda_scheduler: False
+
+
+  identity_phase_out_start: 0.2
+  identity_phase_out_end: 0.6
+  gan_phase_in_start: 0.03
+  gan_phase_in_end: 0.3
+  domain_adaptation_phase_in_start: 0.1
+  domain_adaptation_phase_in_end: 0.5
+  domain_adaptation_scale_max: 2
+  cycle_adjust_start: 0.3
+  cycle_adjust_end: 0.7
+  cycle_scale_min: 0.8
+
+
+  cycle_loss_type_1: l1
+  cycle_loss_type_2: None
+  identity_loss_type_1: l1
+  identity_loss_type_2: None
+
+model:
+  use_stn: False
+  use_residual: False
+  use_full_attention: False
